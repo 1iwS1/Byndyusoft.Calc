@@ -1,4 +1,4 @@
-﻿namespace Calc.Core
+﻿namespace Calc.Application
 {
   public class Class1
   {
