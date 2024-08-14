@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Calc.Core\Calc.Core.csproj" />
+  </ItemGroup>
+
 </Project>
