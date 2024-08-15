@@ -1,5 +1,6 @@
 using Calc.Core.Models.Operators;
 using Calc.Core.Models.Common;
+using Calc.Core.Models;
 
 
 namespace Calc.Tests
@@ -27,7 +28,7 @@ namespace Calc.Tests
     public void MinusOperator_Operation_DifferentValues_ReturnDifference(double a, double b)
     {
       // Act
-      IOperator operation = new PlusOperator();
+      IOperator operation = new MinusOperator();
       var result = operation.Operation(a, b);
 
       // Assert
