@@ -14,7 +14,7 @@ namespace Calc.Tests
     public void GetInfixExpression_InputString_ReturnQueueOfIExpresions(string value)
     {
       // Arrange
-      IParseSourceExpressionService parser = new ParseSourceExpressionService();
+      IParseProcess parser = new ParseSourceExpressionService();
 
       Queue<IExpressionElement> elements = new();
       elements.Enqueue(new Operand() { Value = 6 });

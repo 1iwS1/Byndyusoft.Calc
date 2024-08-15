@@ -2,7 +2,7 @@
 
 namespace Calc.Application.Abstractions
 {
-    public interface IParseSourceExpressionService
+    public interface IParseProcess
     {
         Queue<IExpressionElement> GetInfixExpression(string sourceExpression);
     }

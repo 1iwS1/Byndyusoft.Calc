@@ -4,7 +4,7 @@ using Calc.Core.Models.Common;
 
 namespace Calc.Application.Services
 {
-  public class ParseSourceExpressionService : IParseSourceExpressionService
+  public class ParseSourceExpressionService : IParseProcess
   {
     public Queue<IExpressionElement> GetInfixExpression(string sourceExpression)
     {
