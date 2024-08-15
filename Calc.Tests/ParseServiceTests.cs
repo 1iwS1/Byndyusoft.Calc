@@ -3,6 +3,7 @@ using Calc.Application.Services;
 using Calc.Core.Models.Operators;
 using Calc.Core.Models.Common;
 using Calc.Core.Models;
+using Calc.Tests.Comparers;
 
 
 namespace Calc.Tests
@@ -21,11 +22,14 @@ namespace Calc.Tests
       elements.Enqueue(new PlusOperator());
       elements.Enqueue(new Operand() { Value = 7 });
 
+      IExpressionElementComparer elementComparer = new();
+      QueueComparer<IExpressionElement> queueComparer = new(elementComparer);
+
       // Act
       var result = parser.GetInfixExpression(value);
 
       // Assert
-      Assert.StrictEqual(elements, result);
+      Assert.Equal(elements, result, queueComparer);
     }
 
     [Theory]
@@ -42,11 +46,14 @@ namespace Calc.Tests
       elements.Enqueue(new MultiplierOperator());
       elements.Enqueue(new Operand() { Value = 9 });
 
+      IExpressionElementComparer elementComparer = new();
+      QueueComparer<IExpressionElement> queueComparer = new(elementComparer);
+
       // Act
       var result = parser.GetInfixExpression(value);
 
       // Assert
-      Assert.StrictEqual(elements, result);
+      Assert.Equal(elements, result, queueComparer);
     }
 
     [Theory]
@@ -67,11 +74,14 @@ namespace Calc.Tests
       elements.Enqueue(new Operand() { Value = -9 });
       elements.Enqueue(new RightParenthesis());
 
+      IExpressionElementComparer elementComparer = new();
+      QueueComparer<IExpressionElement> queueComparer = new(elementComparer);
+
       // Act
       var result = parser.GetInfixExpression(value);
 
       // Assert
-      Assert.StrictEqual(elements, result);
+      Assert.Equal(elements, result, queueComparer);
     }
   }
 }
