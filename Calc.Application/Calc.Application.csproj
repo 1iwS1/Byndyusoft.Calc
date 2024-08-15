@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Calc.Core\Calc.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
