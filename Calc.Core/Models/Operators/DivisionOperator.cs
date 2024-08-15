@@ -15,7 +15,7 @@ namespace Calc.Core.Models.Operators
 
     public double Operation(double a, double b)
     {
-      throw new NotImplementedException();
+      return a / b;
     }
   }
 }
