@@ -5,8 +5,7 @@ namespace Calc.Core.Models.Operators
 {
   public class MultiplierOperator : IExpressionElement, IOperator
   {
-    //public char Symbol { get; } = '-';
-    public int Precedence { get; } = 2;
+    private int Precedence { get; } = 2;
 
     public int GetPrecedence()
     {
