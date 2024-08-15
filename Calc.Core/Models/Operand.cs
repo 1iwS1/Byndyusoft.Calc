@@ -5,6 +5,6 @@ namespace Calc.Core.Models
 {
   public class Operand : IExpressionElement
   {
-
+    public double Value { get; set; }
   }
 }
