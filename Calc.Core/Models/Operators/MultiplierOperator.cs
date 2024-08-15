@@ -1,7 +1,7 @@
 ﻿using Calc.Core.Models.Common;
 
 
-namespace Calc.Core.Models
+namespace Calc.Core.Models.Operators
 {
   public class MultiplierOperator : IExpressionElement, IOperator
   {
@@ -15,7 +15,7 @@ namespace Calc.Core.Models
 
     public double Operation(double a, double b)
     {
-      throw new NotImplementedException();
+      return a * b;
     }
   }
 }

@@ -8,6 +8,9 @@ namespace Calc.Application.Common
   {
     public static Dictionary<char, IExpressionElement> Config = new()
     {
+      { '+', new PlusOperator() },
+      { '-', new MinusOperator() },
+      { '*', new MultiplierOperator() },
       { '+', new PlusOperator() }
     };
   }
