@@ -12,7 +12,7 @@ namespace Calc.Application.Services
   {
     public Queue<IExpressionElement> GetInfixExpression(string sourceExpression)
     {
-      Queue<IExpressionElement> elements = new();
+      Queue<IExpressionElement> infixForm = new();
       string tempNumber = string.Empty;
       bool isNegative = false;
       OperatorsConfig operatorsConfig = new();
@@ -31,7 +31,7 @@ namespace Calc.Application.Services
           if (!string.IsNullOrEmpty(tempNumber))
           {
             double numberValue = double.Parse(tempNumber, CultureInfo.InvariantCulture);
-            elements.Enqueue(new Operand() { Value = isNegative ? -numberValue : numberValue });
+            infixForm.Enqueue(new Operand() { Value = isNegative ? -numberValue : numberValue });
             isNegative = false;
             tempNumber = string.Empty;
           }
@@ -43,7 +43,7 @@ namespace Calc.Application.Services
 
           else
           {
-            elements.Enqueue(operatorsConfig.Config[tempChar]);
+            infixForm.Enqueue(operatorsConfig.Config[tempChar]);
           }
         }
       }
@@ -51,10 +51,10 @@ namespace Calc.Application.Services
       if (!string.IsNullOrEmpty(tempNumber))
       {
         double numberValue = double.Parse(tempNumber, CultureInfo.InvariantCulture);
-        elements.Enqueue(new Operand() { Value = isNegative ? -numberValue : numberValue });
+        infixForm.Enqueue(new Operand() { Value = isNegative ? -numberValue : numberValue });
       }
 
-      return elements;
+      return infixForm;
     }
   }
 }

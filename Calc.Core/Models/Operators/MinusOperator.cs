@@ -6,7 +6,7 @@ namespace Calc.Core.Models.Operators
   public class MinusOperator : IExpressionElement, IOperator
   {
     //public char Symbol { get; } = '-';
-    public int Precedence { get; } = 1;
+    private int Precedence { get; } = 1;
 
     public int GetPrecedence()
     {
