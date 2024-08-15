@@ -3,9 +3,9 @@
 
 namespace Calc.Core.Models
 {
-  public class PlusOperator : IOperator
+  public class MinusOperator : IExpressionElement, IOperator
   {
-    //public char Symbol { get; } = '+';
+    //public char Symbol { get; } = '-';
     public int Precedence { get; } = 1;
 
     public int GetPrecedence()
@@ -15,7 +15,7 @@ namespace Calc.Core.Models
 
     public double Operation(double a, double b)
     {
-      return a + b;
+      throw new NotImplementedException();
     }
   }
 }

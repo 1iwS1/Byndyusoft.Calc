@@ -1,6 +1,6 @@
 ﻿namespace Calc.Core.Models.Common
 {
-  public interface IOperator : IExpressionElement
+  public interface IOperator
   {
     //char Symbol { get; }
     int Precedence { get; }

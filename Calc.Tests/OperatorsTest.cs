@@ -1,4 +1,4 @@
-using Calc.Core.Models;
+using Calc.Core.Models.Operators;
 using Calc.Core.Models.Common;
 
 
@@ -18,6 +18,20 @@ namespace Calc.Tests
 
       // Assert
       Assert.Equal(a + b, result);
+    }
+
+    [Theory]
+    [InlineData(1, 2)]
+    [InlineData(-4, 0)]
+    [InlineData(-22, -45)]
+    public void MinusOperator_Operation_DifferentValues_ReturnDifference(double a, double b)
+    {
+      // Act
+      IOperator operation = new PlusOperator();
+      var result = operation.Operation(a, b);
+
+      // Assert
+      Assert.Equal(a - b, result);
     }
   }
 }
