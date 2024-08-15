@@ -43,20 +43,7 @@ namespace Calc.Application.Services
 
           else
           {
-            if (tempChar == '(')
-            {
-              elements.Enqueue(new LeftParenthesis());
-            }
-
-            else if (tempChar == ')')
-            {
-              elements.Enqueue(new RightParenthesis());
-            }
-
-            else
-            {
-              elements.Enqueue(operatorsConfig.Config[tempChar]);
-            }
+            elements.Enqueue(operatorsConfig.Config[tempChar]);
           }
         }
       }
