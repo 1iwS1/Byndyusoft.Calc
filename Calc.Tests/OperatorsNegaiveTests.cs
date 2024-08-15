@@ -10,7 +10,7 @@ namespace Calc.Tests
     [InlineData(0, 0)]
     [InlineData(-4, 0)]
     [InlineData(100, 0)]
-    public void DivisionOperator_Operation_DifferentValues_ReturnException(double a, double b)
+    public void DivisionOperator_Operation_DifferentValues_ReturnDivideByZeroException(double a, double b)
     {
       // Act
       IOperator operation = new DivisionOperator();
