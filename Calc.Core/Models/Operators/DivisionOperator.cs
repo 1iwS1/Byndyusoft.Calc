@@ -15,6 +15,11 @@ namespace Calc.Core.Models.Operators
 
     public double Operation(double a, double b)
     {
+      if (b == 0)
+      {
+        throw new DivideByZeroException();
+      }
+
       return a / b;
     }
   }
