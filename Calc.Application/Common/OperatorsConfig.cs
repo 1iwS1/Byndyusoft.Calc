@@ -9,12 +9,12 @@ namespace Calc.Application.Common
   {
     public Dictionary<char, IExpressionElement> Config = new()
     {
+      { '(', new LeftParenthesis() },
+      { ')', new RightParenthesis() },
       { '+', new PlusOperator() },
       { '-', new MinusOperator() },
       { '*', new MultiplierOperator() },
-      { '/', new DivisionOperator() },
-      { '(', new LeftParenthesis() },
-      { ')', new RightParenthesis() }
+      { '/', new DivisionOperator() }
     };
   }
 }
