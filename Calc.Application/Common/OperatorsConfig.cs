@@ -11,7 +11,7 @@ namespace Calc.Application.Common
       { '+', new PlusOperator() },
       { '-', new MinusOperator() },
       { '*', new MultiplierOperator() },
-      { '+', new PlusOperator() }
+      { '/', new DivisionOperator() }
     };
   }
 }
