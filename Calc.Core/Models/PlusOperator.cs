@@ -15,7 +15,7 @@ namespace Calc.Core.Models
 
     public double Operation(double a, double b)
     {
-      throw new NotImplementedException();
+      return a + b;
     }
   }
 }
