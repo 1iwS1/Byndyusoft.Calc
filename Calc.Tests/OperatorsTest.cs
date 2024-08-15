@@ -34,5 +34,19 @@ namespace Calc.Tests
       // Assert
       Assert.Equal(a - b, result);
     }
+
+    [Theory]
+    [InlineData(0, 0)]
+    [InlineData(-4, -9)]
+    [InlineData(22, -45)]
+    public void MultiplierOperator_Operation_DifferentValues_ReturnMultiplier(double a, double b)
+    {
+      // Act
+      IOperator operation = new MultiplierOperator();
+      var result = operation.Operation(a, b);
+
+      // Assert
+      Assert.Equal(a * b, result);
+    }
   }
 }
