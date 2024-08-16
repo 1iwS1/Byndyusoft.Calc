@@ -17,8 +17,16 @@ public class Program
 
     try
     {
-      var consoleProvider = serviceProvider.GetRequiredService<IProvider>();
-      sourceExpression = args[0];
+      if (args.Length != 0)
+      {
+        sourceExpression = args[0];
+      }
+
+      else
+      {
+        var consoleProvider = serviceProvider.GetRequiredService<IProvider>();
+        sourceExpression = consoleProvider.GetSourceExpression();
+      }
 
       if (sourceExpression == null)
       {
