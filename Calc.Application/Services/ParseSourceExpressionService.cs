@@ -22,7 +22,6 @@ namespace Calc.Application.Services
       Queue<IExpressionElement> infixForm = new();
       string tempNumber = string.Empty;
       bool isNegative = false;
-      //OperatorsConfig operatorsConfig = new();
 
       for (int i = 0; i < sourceExpression.Length; i++)
       {
