@@ -3,7 +3,6 @@ using Calc.Application.Services;
 using Calc.Core.Models.Operators;
 using Calc.Core.Models.Common;
 using Calc.Core.Models;
-using Calc.Tests.Comparers;
 
 
 namespace Calc.Tests

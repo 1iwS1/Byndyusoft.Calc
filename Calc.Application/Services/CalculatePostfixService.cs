@@ -1,7 +1,6 @@
 ﻿using Calc.Application.Abstractions;
-using Calc.Core.Models;
 using Calc.Core.Models.Common;
-using System.Net.Http.Headers;
+using Calc.Core.Models;
 
 
 namespace Calc.Application.Services
