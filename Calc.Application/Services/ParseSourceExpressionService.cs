@@ -2,20 +2,27 @@
 
 using Calc.Application.Abstractions;
 using Calc.Application.Common;
-using Calc.Core.Models;
 using Calc.Core.Models.Common;
+using Calc.Core.Models;
 
 
 namespace Calc.Application.Services
 {
   public class ParseSourceExpressionService : IParseProcess
   {
+    private readonly OperatorsConfig _operatorsConfig;
+
+    public ParseSourceExpressionService(OperatorsConfig operatorsConfig)
+    {
+      _operatorsConfig = operatorsConfig;
+    }
+
     public Queue<IExpressionElement> GetInfixExpression(string sourceExpression)
     {
       Queue<IExpressionElement> infixForm = new();
       string tempNumber = string.Empty;
       bool isNegative = false;
-      OperatorsConfig operatorsConfig = new();
+      //OperatorsConfig operatorsConfig = new();
 
       for (int i = 0; i < sourceExpression.Length; i++)
       {
@@ -43,7 +50,7 @@ namespace Calc.Application.Services
 
           else
           {
-            infixForm.Enqueue(operatorsConfig.Config[tempChar]);
+            infixForm.Enqueue(_operatorsConfig.Config[tempChar]);
           }
         }
       }

@@ -1,5 +1,6 @@
 ﻿using Calc.Application.Abstractions;
 using Calc.Application.Services;
+using Calc.Application.Common;
 using Calc.Core.Models.Operators;
 using Calc.Core.Models.Common;
 using Calc.Core.Models;
@@ -10,12 +11,20 @@ namespace Calc.Tests
 {
   public class ParseServiceTests
   {
+
+
+    public ParseServiceTests()
+    {
+
+    }
+
     [Theory]
     [InlineData("6+7")]
     public void GetInfixExpression_InputString6plus7_ReturnQueueOfIExpresions(string value)
     {
       // Arrange
-      IParseProcess parser = new ParseSourceExpressionService();
+      OperatorsConfig config = new();
+      IParseProcess parser = new ParseSourceExpressionService(config);
 
       Queue<IExpressionElement> elements = new();
       elements.Enqueue(new Operand() { Value = 6 });
@@ -37,7 +46,8 @@ namespace Calc.Tests
     public void GetInfixExpression_InputString6plus7multiply9_ReturnQueueOfIExpresions(string value)
     {
       // Arrange
-      IParseProcess parser = new ParseSourceExpressionService();
+      OperatorsConfig config = new();
+      IParseProcess parser = new ParseSourceExpressionService(config);
 
       Queue<IExpressionElement> elements = new();
       elements.Enqueue(new Operand() { Value = 6 });
@@ -61,7 +71,8 @@ namespace Calc.Tests
     public void GetInfixExpression_InputString_ReturnQueueOfIExpresions(string value)
     {
       // Arrange
-      IParseProcess parser = new ParseSourceExpressionService();
+      OperatorsConfig config = new();
+      IParseProcess parser = new ParseSourceExpressionService(config);
 
       Queue<IExpressionElement> elements = new();
       elements.Enqueue(new Operand() { Value = -4 });
