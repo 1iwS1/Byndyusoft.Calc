@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Calc.Application\Calc.Application.csproj" />
+    <ProjectReference Include="..\Calc.ConsoleApp\Calc.ConsoleApp.csproj" />
     <ProjectReference Include="..\Calc.Core\Calc.Core.csproj" />
   </ItemGroup>
 
