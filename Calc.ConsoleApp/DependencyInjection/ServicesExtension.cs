@@ -15,6 +15,7 @@ namespace Calc.ConsoleApp.DependencyInjection
       services.AddScoped<IParseProcess, ParseSourceExpressionService>();
       services.AddScoped<IConverter, ConvertFromInfixToPostfix>();
       services.AddScoped<ICalculateService, CalculatePostfixService>();
+      services.AddScoped<IValidator, ExpressionValidator>();
 
       services.AddScoped<IProvider, ConsoleProvider>();
 
