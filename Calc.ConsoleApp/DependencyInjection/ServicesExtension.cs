@@ -2,8 +2,8 @@
 
 using Calc.Application.Abstractions;
 using Calc.Application.Services;
-using Calc.Application.Common;
 using Calc.ConsoleApp.Providers;
+using Calc.Core;
 
 
 namespace Calc.ConsoleApp.DependencyInjection

@@ -3,7 +3,7 @@ using Calc.Core.Models.Common;
 using Calc.Core.Models;
 
 
-namespace Calc.Application.Common
+namespace Calc.Core
 {
   public class OperatorsConfig
   {

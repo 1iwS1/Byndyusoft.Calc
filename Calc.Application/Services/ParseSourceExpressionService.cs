@@ -1,9 +1,9 @@
 ﻿using System.Globalization;
 
 using Calc.Application.Abstractions;
-using Calc.Application.Common;
 using Calc.Core.Models.Common;
 using Calc.Core.Models;
+using Calc.Core;
 
 
 namespace Calc.Application.Services

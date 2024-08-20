@@ -28,7 +28,7 @@ public class Program
         sourceExpression = consoleProvider.GetSourceExpression();
       }
 
-      if (string.IsNullOrEmpty(sourceExpression))
+      if (string.IsNullOrWhiteSpace(sourceExpression))
       {
         throw new ArgumentException("Nothing to calculate...");
       }

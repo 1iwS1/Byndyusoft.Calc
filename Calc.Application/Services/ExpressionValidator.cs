@@ -1,5 +1,5 @@
 ﻿using Calc.Application.Abstractions;
-using Calc.Application.Common;
+using Calc.Core;
 
 
 namespace Calc.Application.Services
