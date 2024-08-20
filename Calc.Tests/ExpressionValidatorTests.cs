@@ -10,11 +10,15 @@ namespace Calc.Tests
     [Theory]
     [InlineData("5+7")]
     [InlineData("-8/4-(-6)")]
+    [InlineData("-8.0/4.45-(-6)")]
+    [InlineData("-8/4-(-6.05)")]
     [InlineData("(-88)-8+8*(-1)")]
     [InlineData("-(-88)-8+8*(-1)")]
     [InlineData("7/9*99*0")]
     [InlineData("8-(6*6/(-6))")]
     [InlineData("(89)-(6*6/(-6))")]
+    [InlineData("(9)/1.5+(-8)")]
+    [InlineData("-4/2+7-(-9)")]
     public void Validate_CorrectExpressions_InputString_ReturnBool(string expression)
     {
       // Arrange

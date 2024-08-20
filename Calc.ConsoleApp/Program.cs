@@ -28,7 +28,7 @@ public class Program
         sourceExpression = consoleProvider.GetSourceExpression();
       }
 
-      if (sourceExpression == null || sourceExpression == string.Empty)
+      if (string.IsNullOrEmpty(sourceExpression))
       {
         throw new ArgumentException("Nothing to calculate...");
       }
@@ -42,6 +42,11 @@ public class Program
 
     try
     {
+      var validator = serviceProvider.GetRequiredService<IValidator>();
+
+      if (!validator.Validate(sourceExpression))
+        throw new ArgumentException("Incorrect expression");
+
       var parser = serviceProvider.GetRequiredService<IParseProcess>();
       var infixForm = parser.GetInfixExpression(sourceExpression);
 
