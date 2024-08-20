@@ -42,7 +42,13 @@ namespace Calc.Application.Services
             tempNumber = string.Empty;
           }
 
-          if (tempChar == '-' && (i == 0 || sourceExpression[i - 1] == '('))
+          if (tempChar == '-' && i == 0 && sourceExpression[i + 1] == '(')
+          {
+            infixForm.Enqueue(new Operand() { Value = 0 }); // нужно для корректного подсчета случаев подобных -(89-2)
+            infixForm.Enqueue(_operatorsConfig.Config[tempChar]);
+          }
+
+          else if (tempChar == '-' && (i == 0 || sourceExpression[i - 1] == '('))
           {
             isNegative = true;
           }
